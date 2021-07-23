@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p> Enter the details of the cat you want to create, then click "Submit" to add to the database:</p>
+
+        <form id = "frm1" action = "/action_page.php">
+    Age: <input type = "int" name = "age"><br>
+    Breed: <input type = "text" name = "breed"><br>
+    Cute?: <input type = "boolean" name = "cute?"><br>
+    Colouring: <input type = "text" name = "colouring"><br>
+    <input type = "button" onclick = "myFunction()" value = "Submit">
+</form>
+
+<script>
+    function myFunction() {
+        document.getElementById("frm1").submit();
+    }
+</script>
+    </body>
+</html>
