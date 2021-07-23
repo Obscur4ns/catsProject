@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+    <meta charset = "UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE = edge">
+    <meta name="viewport" content="width = device-width, initial-scale=1.0">
+    <title>List of Breeds</title>
+    <style>
+        body {
+           color:seagreen;
+           max-width: 500px;
+           margin: auto;
+           font-size: large;
+           background-color: transparent;
+           text-decoration: none;
+        }
+
+        h2 {
+            text-decoration: underline;
+        }
+
+        h3 {
+            color: darkolivegreen;
+        }
+
+        a:link {
+            color: seagreen;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        a:visited {
+            color:darkolivegreen;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color:black;
+            background-color: transparent;
+            text-decoration: bold;
+        }
+
+        table {
+            border-collapse: collapse;
+            color: grey;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color:black;
+  color: seagreen;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+    </style>
+</head>
+<body>
+
+    <button onclick="topFunction()" 
+    id="myBtn" title="Go to top">上(Top)</button>
+    <script>
+        var mybutton = 
+        document.getElementById("myBtn");
+        window.onscroll = function()
+        {scrollFunction()};
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || 
+            document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            }else{
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+        }
+    </script>
+
+    <button onclick = "goBack()">戻る(Go Back)</button>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+    <br>
+    <br>
+    <a href = "index.html">ホームページ </br> (Homepage) </a>
+    <section>
+        <h2>ジャパニーズボブテイル </br> (Japanese Bobtail)</h2>
+        <h3>男性 (Male)</h3>
+            <table>
+                <thead>
+                    <td>
+                        年齢 (age)
+                    </td>
+                    <td>
+                        繁殖 (breed)
+                    </td>
+                    <td>
+                        かわいいですか？(cute?)
+                    </td>
+                    <td>
+                        着色 (colouring)
+                    </td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            int
+                        </td>
+                        <td>
+                            String
+                        </td>
+                        <td>
+                            boolean
+                        </td>
+                        <td>
+                            String
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        <h3>女性 (Female)</h3>
+            <table>
+                <thead>
+                    <td>
+                        年齢 (age)
+                    </td>
+                    <td>
+                        繁殖 (breed)
+                    </td>
+                    <td>
+                        かわいいですか？(cute?)
+                    </td>
+                    <td>
+                        着色 (colouring)
+                    </td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            int
+                        </td>
+                        <td>
+                            String
+                        </td>
+                        <td>
+                            boolean
+                        </td>
+                        <td>
+                            String
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
+    <section>
+        <h2>ジャパニーズボブテールロングヘア</br>(Japanese Bobtail Long Hair)</h2>
+        <h3>男性 (Male)</h3>
+            <table>
+                <thead>
+                    <td>
+                        年齢 (age)
+                    </td>
+                    <td>
+                        繁殖 (breed)
+                    </td>
+                    <td>
+                        かわいいですか？(cute?)
+                    </td>
+                    <td>
+                        着色 (colouring)
+                    </td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            int
+                        </td>
+                        <td>
+                            String
+                        </td>
+                        <td>
+                            boolean
+                        </td>
+                        <td>
+                            String
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        <h3>女性 (Female)</h3>
+            <table>
+                <thead>
+                    <td>
+                        年齢 (age)
+                    </td>
+                    <td>
+                        繁殖 (breed)
+                    </td>
+                    <td>
+                        かわいいですか？(cute?)
+                    </td>
+                    <td>
+                        着色 (colouring)
+                    </td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            int
+                        </td>
+                        <td>
+                            String
+                        </td>
+                        <td>
+                            boolean
+                        </td>
+                        <td>
+                            String
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
+    <section>
+        <h2>クリルアイランドボブテイル</br>(Kurilian Bobtail)</h2>
+        <h3>男性 (Male)</h3>
+            <table>
+                <thead>
+                    <td>
+                        年齢 (age)
+                    </td>
+                    <td>
+                        繁殖 (breed)
+                    </td>
+                    <td>
+                        かわいいですか？(cute?)
+                    </td>
+                    <td>
+                        着色 (colouring)
+                    </td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            int
+                        </td>
+                        <td>
+                            String
+                        </td>
+                        <td>
+                            boolean
+                        </td>
+                        <td>
+                            String
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        <h3>女性 (Female)</h3>
+            <table>
+                <thead>
+                    <td>
+                        年齢 (age)
+                    </td>
+                    <td>
+                        繁殖 (breed)
+                    </td>
+                    <td>
+                        かわいいですか？(cute?)
+                    </td>
+                    <td>
+                        着色 (colouring)
+                    </td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            int
+                        </td>
+                        <td>
+                            String
+                        </td>
+                        <td>
+                            boolean
+                        </td>
+                        <td>
+                            String
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
+</body>
+</html>
