@@ -23,3 +23,14 @@ const getAllCats = () => {
         cats.forEach(cat => renderCat(cat, getAllOutput));
     }).catch(err => console.log(err));
 }
+
+const getCatById = () => {
+    axios.get(`${baseURL}/getCat/${catId.value}`)
+    .then(res => {
+        const cat = res.data;
+        getByIdOutput.innerHTML = "";
+        renderCat(cat, getByIdOutput);
+    }).catch(err => console.log(err));
+}
+
+document.querySelector("section#getById > button").addEventListener('click', getCatById);

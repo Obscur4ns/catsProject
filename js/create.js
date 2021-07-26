@@ -33,3 +33,29 @@ const renderCat = (cat, outputDiv) => {
 
     outputDiv.appendChild(newCat);
 }
+
+document.querySelector("section#postSection > form").addEventListener('submit', (e) => { e.preventDefault();
+
+console.log("This: ", this);
+console.log("Breed: ", this.breed);
+
+const form = e.target;
+const data = {
+    name: form.name.value,
+    age: form.age.value,
+    breed: form.breed.value,
+    cutie?: form.cutie.value,
+    colouring: form.colouring.value
+}
+
+console.log("Data: ", data);
+
+axios.post(`${baseURL}/createCat`, data)
+.then((res) => {
+    console.log(res);
+    getAllCats();
+
+    form.reset();
+    form.name.focus();
+}).catch(err => console.log(err));
+});
