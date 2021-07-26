@@ -1,20 +1,45 @@
 <!DOCTYPE html>
+<html lang = "en">
+    <head>
+    <meta charset = "UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE = edge">
+    <meta name="viewport" content="width = device-width, initial-scale=1.0">
+    <title>Create a Cat</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        body {
+            color:seagreen;
+           max-width: 500px;
+           margin: auto;
+           font-size: large;
+           background-color: transparent;
+           text-decoration: none;
+        }
+        </style>
 <html>
     <body>
-        <p> Enter the details of the cat you want to create, then click "Submit" to add to the database:</p>
+        <p> Enter the details of the cat you want to create, then click "Submit" to add to the database</p>
+        <h6><i>Did you know the oldest cat in the world is Cream Puff at 38 years old?</i></h6>
 
-        <form id = "frm1" action = "/action_page.php">
-    Age: <input type = "int" name = "age"><br>
-    Breed: <input type = "text" name = "breed"><br>
-    Cute?: <input type = "boolean" name = "cute?"><br>
-    Colouring: <input type = "text" name = "colouring"><br>
-    <input type = "button" onclick = "myFunction()" value = "Submit">
+        <form>
+            <label for = "catAge">年(Age):</label>
+            <input type = "number" id = "catAge" name = "Age" min = 1 max = 38 required>
+            <br>
+            <label for = "catName"> 名前(Name):</label>
+            <input type = "text" id = "catName" name = "Name" required>
+            <br>
+            <label for = "catBreed"> 繁殖(Breed):</label>
+            <input type = "text" id =  "catBreed" name = "Breed" required>
+            <br>
+            <label for = "catCutie">キューティー(Cutie)?</label>
+            <input type = "checkbox" id = "catCutie" name = "Cutie?" value = "Yes">
+            <br>
+            <label for = "catColouring">着色(Colouring):</label>
+            <input type = "text" id = "catColouring" name = "Colouring" required>
 </form>
 
-<script>
-    function myFunction() {
-        document.getElementById("frm1").submit();
-    }
-</script>
+<script src = "./js/create.js"></script>
     </body>
 </html>
