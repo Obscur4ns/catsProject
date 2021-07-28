@@ -1,6 +1,6 @@
 "use strict";
 
-const baseURL = "http://localhost:8080";
+const baseURL = "http://localhost:5500";
 
 axios.get(`${baseURL}/`)
 .then(res => {
@@ -34,7 +34,7 @@ const renderCat = (cat, outputDiv) => {
     outputDiv.appendChild(newCat);
 }
 
-document.querySelector("section#postSection > form").addEventListener('submit', (e) => { e.preventDefault();
+document.querySelector("form#myForm").addEventListener('submit', (e) => { e.preventDefault();
 
 console.log("This: ", this);
 console.log("Breed: ", this.breed);
@@ -44,7 +44,7 @@ const data = {
     name: form.name.value,
     age: form.age.value,
     breed: form.breed.value,
-    cutie?: form.cutie.value,
+    cutie: form.cutie.value,
     colouring: form.colouring.value
 }
 
@@ -60,8 +60,7 @@ axios.post(`${baseURL}/createCat`, data)
 }).catch(err => console.log(err));
 });
 
-var myModal = new bootstrap.Modal(document.getElementById('myModal'), options);
+var myModal = new bootstrap.Modal(document.getElementById('myModal'));
 var myModalEl = document.getElementById('myModal')
 myModalEl.addEventListener('hidden.bs.modal', function (event) {
-  show.bs.Modal
 })
