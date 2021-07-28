@@ -59,3 +59,9 @@ axios.post(`${baseURL}/createCat`, data)
     form.name.focus();
 }).catch(err => console.log(err));
 });
+
+var myModal = new bootstrap.Modal(document.getElementById('myModal'), options);
+var myModalEl = document.getElementById('myModal')
+myModalEl.addEventListener('hidden.bs.modal', function (event) {
+  show.bs.Modal
+})

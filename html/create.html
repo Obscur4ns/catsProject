@@ -8,22 +8,68 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
         body {
             color:seagreen;
            max-width: 500px;
            margin: auto;
            font-size: large;
-           background-color: transparent;
+           background-color: black;
            text-decoration: none;
         }
+
+        button{
+            color: darkolivegreen;
+        }
+
+        #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color:black;
+  color: seagreen;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
         </style>
 <html>
     <body>
+
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        <script>
+            var mybutton = document.getElementById("myBtn");
+    
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        }else{
+            mybutton.style.display = "none";
+        }
+    }
+    
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+        </script>
+        <br><br>
         <p> Enter the details of the cat you want to create, then click "Submit" to add to the database</p>
         <h6><i>Did you know the oldest cat in the world is Cream Puff at 38 years old?</i></h6>
 
-        <form>
+        <form name = "myForm">
             <label for = "catAge">年(Age):</label>
             <input type = "number" id = "catAge" name = "Age" min = 1 max = 38 required>
             <br>
@@ -39,7 +85,44 @@
             <label for = "catColouring">着色(Colouring):</label>
             <input type = "text" id = "catColouring" name = "Colouring" required>
 </form>
-
+<br><br><br>
+<h1>-------------------------------</h1>
+<p>Update a Cat here</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Click to Update a Cat
+                      </button>
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Update a Cat</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form name = "myForm">
+                                    <label for = "catAge">年(Age):</label>
+                                    <input type = "number" id = "catAge" name = "Age" min = 1 max = 38 required>
+                                    <br>
+                                    <label for = "catName"> 名前(Name):</label>
+                                    <input type = "text" id = "catName" name = "Name" required>
+                                    <br>
+                                    <label for = "catBreed"> 繁殖(Breed):</label>
+                                    <input type = "text" id =  "catBreed" name = "Breed" required>
+                                    <br>
+                                    <label for = "catCutie">キューティー(Cutie)?</label>
+                                    <input type = "checkbox" id = "catCutie" name = "Cutie?" value = "Yes">
+                                    <br>
+                                    <label for = "catColouring">着色(Colouring):</label>
+                                    <input type = "text" id = "catColouring" name = "Colouring" required>
+                        </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 <script src = "./js/create.js"></script>
     </body>
 </html>
