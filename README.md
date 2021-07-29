@@ -4,7 +4,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/Obscur4ns/catsProject">
-    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpmantis06%2Fhoritomo-monmon-cats%2F&psig=AOvVaw3t-qSGXWWlbeD6kdUus3J2&ust=1627637380343000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKiukPX7h_ICFQAAAAAdAAAAABAD" alt="Logo" width="80" height="80">
+    <img src="https://i2.wp.com/reprobatepress.com/wp-content/uploads/2019/08/monmon-cats-Kazuaki-Horitomo-4.jpg?w=416&h=416&crop=1&ssl=1" alt="Logo" width="200" height="200">
   </a>
 
   <h3 align="center">All The Cats</h3>
