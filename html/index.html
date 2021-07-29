@@ -1,80 +1,399 @@
 <!DOCTYPE html>
-<hmtl lang = "en">
-<head>
-    <meta charset = "UTF-8">
-    <meta http-equiv = "X-UA-Compatible" content = "IE-edge">
-    <title>Home Page</title>
-    
-    <link rel = "stylesheet" href = "index.css">
-    <style>
-        body {
-           color:seagreen;
-           max-width: 500px;
-           margin: auto;
-           font-size: large;
-           background-color: transparent;
-           text-decoration: none;
-        }
+<hmtl lang="en">
 
-        nav {
-            color:darkolivegreen;
-            max-width: 500px;
-            margin:auto;
-            font-size: medium;
-            background-color: transparent;
-            text-decoration: underline;
-        }
+    <head>
 
-        a:link {
-            color: seagreen;
-            background-color: transparent;
-            text-decoration: underline;
-            size: 120pc;
-        }
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE = edge">
+            <meta name="viewport" content="width = device-width, initial-scale=1.0">
+            <title>Create a Cat</title>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+                integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                crossorigin="anonymous"></script>
+            <style>
+                body {
+                    color: seagreen;
+                    max-width: 500px;
+                    margin: auto;
+                    font-size: large;
+                    background-color: transparent;
+                    text-decoration: none;
+                }
 
-        a:visited {
-            color:black;
-            background-color: transparent;
-            text-decoration: underline;
-        }
+                nav {
+                    color: darkolivegreen;
+                    max-width: 500px;
+                    margin: auto;
+                    font-size: medium;
+                    background-color: transparent;
+                    text-decoration: underline;
+                }
 
-        a:hover {
-            color:black;
-            background-color: transparent;
-            text-decoration: bold;
-        }
-    </style>
-</head>
+                a:link {
+                    color: seagreen;
+                    background-color: transparent;
+                    text-decoration: underline;
+                    size: 120pc;
+                }
+
+                a:visited {
+                    color: black;
+                    background-color: transparent;
+                    text-decoration: underline;
+                }
+
+                a:hover {
+                    color: black;
+                    background-color: transparent;
+                    text-decoration: bold;
+                }
+
+                button {
+                    color: darkolivegreen;
+                }
+
+                #myBtn {
+                    display: none;
+                    position: fixed;
+                    bottom: 20px;
+                    right: 30px;
+                    z-index: 99;
+                    font-size: 18px;
+                    border: none;
+                    outline: none;
+                    background-color: black;
+                    color: seagreen;
+                    cursor: pointer;
+                    padding: 15px;
+                    border-radius: 4px;
+                }
+
+                #myBtn:hover {
+                    background-color: #555;
+                }
+            </style>
+        </head>
+
     <body>
+
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        <script>
+            var mybutton = document.getElementById("myBtn");
+
+            window.onscroll = function () { scrollFunction() };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        </script>
+        <br><br>
         <h1>すべての猫</br> (All The Cats)</h1>
         <h3>猫と日本人が大好きだと言えないなら</br> (If you could not tell, I love cats and Japanese)</h3>
+        <br><br>
+        <h1>-------------------------------</h1>
+        <p> Enter the details of the cat you want to create, then click "Submit" to add to the database</p>
+        <h6><i>Did you know the oldest cat in the world is Cream Puff at 38 years old?</i></h6>
+
+        <form id="myForm">
+            <label for="catAge">年(Age):</label>
+            <input type="number" id="catAge" name="Age" min=1 max=38 required>
+            <br>
+            <label for="catName"> 名前(Name):</label>
+            <input type="text" id="catName" name="Name" required>
+            <br>
+            <label for="catBreed"> 繁殖(Breed):</label>
+            <input type="text" id="catBreed" name="Breed" required>
+            <br>
+            <label for="catCutie">キューティー(Cutie)?</label>
+            <input type="checkbox" id="catCutie" name="Cutie?" value="Yes">
+            <br>
+            <label for="catColouring">着色(Colouring):</label>
+            <input type="text" id="catColouring" name="Colouring" required>
+        </form>
+        <br><br>
+        <h1>-------------------------------</h1>
         <br>
-        <nav class = "navbar">
-            <a href = "./create.html" class = "navbar-create">あなた自身の猫を作成します</br>(Create your own cat)</a>
-            <nav class = "navbar">
-                <br>
-                <nav class = "navbar">
-                    <a href = "find.html" class = "navbar-find">以前に作られた猫を探す</br>(Find a previously made cat)</a>
-                    <br>
-                    <br>
-                <nav class = "navbar">
-                    <a href = "replace.html" class = "navbar-replace">以前に作られた猫の詳細を置き換える</br>(Replace details of a previously made cat)</a>
-                <br>
-                <br>
-                <nav class = "navbar">
-                    <a href = "remove.html" class = "navbar-remove">猫を取り除くಥ_ಥ</br>(Remove a cat ಥ_ಥ)</a>
-                    <br>
-                    <br>
-                <nav class = "navbar">
-                    <a href = "lists.html">品種のリスト</br> (List of Breeds)</a>
-                    <br>
-                    <br>
-                <nav class = "navbar">
-                    <a href = "rng.html">あなたは何の猫ですか？</br> (What cat are you?)</a>
-                    <br>
-                    <br>
-                <nav class = "navbar">
-                    <a href = "index.html">ホームページ</br> (Homepage)</a>  
-        </nav>
+        <h2>猫を探す<br>(Find a Cat)</h2>
+        <label for="catId">ID:</label>
+        <input type="number" name="catId" id="catId" min="1">
+        <button>探す<br>(Find)</button>
+        <div id="getByIdOutput"></div>
+        <br><br>
+        <h1>-------------------------------</h1>
+        <br>
+        <p>Update a Cat here</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+            Click to Update a Cat
+        </button>
+        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myModalLabel">Update a Cat</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="myForm">
+                            <label for="catAge">年(Age):</label>
+                            <input type="number" id="catAge" name="Age" min=1 max=38 required>
+                            <br>
+                            <label for="catName"> 名前(Name):</label>
+                            <input type="text" id="catName" name="Name" required>
+                            <br>
+                            <label for="catBreed"> 繁殖(Breed):</label>
+                            <input type="text" id="catBreed" name="Breed" required>
+                            <br>
+                            <label for="catCutie">キューティー(Cutie)?</label>
+                            <input type="checkbox" id="catCutie" name="Cutie?" value="Yes">
+                            <br>
+                            <label for="catColouring">着色(Colouring):</label>
+                            <input type="text" id="catColouring" name="Colouring" required>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <h1>-------------------------------</h1>
+        <br>
+        <h2>猫を取り除く<br>(Remove a Cat)</h2>
+        <label for="catId">ID:</label>
+        <input type="number" name="catId" id="catId" min="1">
+        <button>探す<br>(Find)</button>
+        <div id="deleteCat"></div>
+        <script src="../js/index.js"></script>
+        <br><br>
+        <h1>-------------------------------</h1>
+        <br>
+        <h2>ジャパニーズボブテイル </br> (Japanese Bobtail)</h2>
+        <h3>男性 (Male)</h3>
+        <table>
+            <thead>
+                <td>
+                    年齢 (age)
+                </td>
+                <td>
+                    繁殖 (breed)
+                </td>
+                <td>
+                    かわいいですか？(cute?)
+                </td>
+                <td>
+                    着色 (colouring)
+                </td>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        int
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                        boolean
+                    </td>
+                    <td>
+                        String
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h1>-------------------------------</h1>
+        <h3>女性 (Female)</h3>
+        <table>
+            <thead>
+                <td>
+                    年齢 (age)
+                </td>
+                <td>
+                    繁殖 (breed)
+                </td>
+                <td>
+                    かわいいですか？(cute?)
+                </td>
+                <td>
+                    着色 (colouring)
+                </td>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        int
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                        boolean
+                    </td>
+                    <td>
+                        String
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h1>-------------------------------</h1>
+        </section>
+        <section>
+            <h2>ジャパニーズボブテールロングヘア</br>(Japanese Bobtail Long Hair)</h2>
+            <h3>男性 (Male)</h3>
+            <table>
+                <thead>
+                    <td>
+                        年齢 (age)
+                    </td>
+                    <td>
+                        繁殖 (breed)
+                    </td>
+                    <td>
+                        かわいいですか？(cute?)
+                    </td>
+                    <td>
+                        着色 (colouring)
+                    </td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            int
+                        </td>
+                        <td>
+                            String
+                        </td>
+                        <td>
+                            boolean
+                        </td>
+                        <td>
+                            String
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h1>-------------------------------</h1>
+            <h3>女性 (Female)</h3>
+            <table>
+                <thead>
+                    <td>
+                        年齢 (age)
+                    </td>
+                    <td>
+                        繁殖 (breed)
+                    </td>
+                    <td>
+                        かわいいですか？(cute?)
+                    </td>
+                    <td>
+                        着色 (colouring)
+                    </td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            int
+                        </td>
+                        <td>
+                            String
+                        </td>
+                        <td>
+                            boolean
+                        </td>
+                        <td>
+                            String
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h1>-------------------------------</h1>
+        </section>
+        <section>
+            <h2>クリルアイランドボブテイル</br>(Kurilian Bobtail)</h2>
+            <h3>男性 (Male)</h3>
+            <table>
+                <thead>
+                    <td>
+                        年齢 (age)
+                    </td>
+                    <td>
+                        繁殖 (breed)
+                    </td>
+                    <td>
+                        かわいいですか？(cute?)
+                    </td>
+                    <td>
+                        着色 (colouring)
+                    </td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            int
+                        </td>
+                        <td>
+                            String
+                        </td>
+                        <td>
+                            boolean
+                        </td>
+                        <td>
+                            String
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h1>-------------------------------</h1>
+            <h3>女性 (Female)</h3>
+            <table>
+                <thead>
+                    <td>
+                        年齢 (age)
+                    </td>
+                    <td>
+                        繁殖 (breed)
+                    </td>
+                    <td>
+                        かわいいですか？(cute?)
+                    </td>
+                    <td>
+                        着色 (colouring)
+                    </td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            int
+                        </td>
+                        <td>
+                            String
+                        </td>
+                        <td>
+                            boolean
+                        </td>
+                        <td>
+                            String
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br><br>
+            <h1>-------------------------------</h1>
     </body>
-</html>
+
+    </html>
